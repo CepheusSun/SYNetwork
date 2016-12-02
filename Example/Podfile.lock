@@ -1,0 +1,16 @@
+PODS:
+  - SYNetwork (0.1.0)
+
+DEPENDENCIES:
+  - SYNetwork (from `../`)
+
+EXTERNAL SOURCES:
+  SYNetwork:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SYNetwork: dbc1db39d849e3650083dae04b1d9194f1b943c6
+
+PODFILE CHECKSUM: 37578f02cbf71d89f6ae373668681b8a0347122e
+
+COCOAPODS: 1.2.0.beta.1

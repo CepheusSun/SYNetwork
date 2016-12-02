@@ -1,33 +1,24 @@
-#
-# Be sure to run `pod lib lint SYNetwork.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
+  # pod 库名
   s.name             = 'SYNetwork'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SYNetwork.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  # pod 版本
+  s.version          = '0.1'
+  # pod 概述 
+  s.summary          = 'A grest network frameworks.'
+  # pod的详细描述
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+    ’this is A great network frameworks'
                        DESC
-
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/SYNetwork'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  # pod 的主页
+  s.homepage         = 'https://github.com/ProgramerSunny/SYNetwork'
+  # 许可证书
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '孙扬' => '624162319@qq.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/SYNetwork.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  # 作者信息
+  s.author           = { 'ProgramerSunny' => 'cd_sunyang@163.com' }
+  # pod 源码在 GitHub 的仓库地址,以及 pod 版本
+  s.source           = { :git => 'https://github.com/ProgramerSunny/SYNetwork.git', :tag => 0.1 }
+  # pod 支持 iOS 系统
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'SYNetwork/Classes/**/*'
