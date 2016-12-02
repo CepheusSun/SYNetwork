@@ -21,13 +21,9 @@ Pod::Spec.new do |s|
   # pod 支持 iOS 系统
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'SYNetwork/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SYNetwork' => ['SYNetwork/Assets/*.png']
-  # }
+  s.source_files = 'SYNetwork/Classes/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.public_header_files = 'SYNetwork/Classes/SYNetwork.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 3.0'
 end

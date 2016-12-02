@@ -10,6 +10,14 @@
 #endif
 #endif
 
+#import "SYCache.h"
+#import "SYCacheObject.h"
+#import "SYHTTPManager.h"
+#import "SYNetwork.h"
+#import "SYRequest.h"
+#import "SYRequestConfig.h"
+#import "SYRequestParametersBuilder.h"
+#import "SYResponse.h"
 
 FOUNDATION_EXPORT double SYNetworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char SYNetworkVersionString[];
