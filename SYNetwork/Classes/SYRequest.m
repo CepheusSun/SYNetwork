@@ -137,7 +137,7 @@
         [self.callBackDelegate managerCallApiDidFailed:aError.localizedDescription];
     }else {
         if (self.failureBlock) {
-            self.failureBlock(nil,aError.localizedDescription);
+            self.failureBlock(nil,aError.domain);
         }
     }
     [self clearCompletionBlock];
