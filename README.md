@@ -52,7 +52,8 @@ SYNetwork 由下面两个部分组成
   - SYCacheObject 
 
     > 缓存的对象
-* SYCache
+    
+* SYLogger
 
  > 一个漂亮的Logger
  
