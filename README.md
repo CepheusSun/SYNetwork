@@ -52,9 +52,11 @@ SYNetwork 由下面两个部分组成
   - SYCacheObject 
 
     > 缓存的对象
+* SYCache
 
-
-
+ > 一个漂亮的Logger
+ 
+ 
 ## 加入
 
 #### 1、直接将源文件拉进你的工程
