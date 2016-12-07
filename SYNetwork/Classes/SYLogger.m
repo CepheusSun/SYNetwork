@@ -30,17 +30,17 @@
 
 + (void)logDebugInfomationDataTask:(NSURLSessionDataTask *)dataTask
                            request:(SYRequest *)request
-                          response:(id)response {
+                          response:(SYResponse *)response {
     NSMutableString *logString = [NSMutableString stringWithString:
                                   @"\n\n**************************************************************\n*                       Request Start                        *\n**************************************************************\n\n"];
     
     [logString appendFormat:@"API Name:\t\t%@\n", dataTask.currentRequest.URL];
     [logString appendFormat:@"Method:\t\t\t%lu\n", (unsigned long)request.requestType];
     [logString appendFormat:@"Params:\n%@", request.requestParams];
-    
+    [logString appendFormat:@"Response:\n%@", response.content];
     [logString appendString:@"\n---------------  Related Request Content  --------------\n"];
     
-    [logString appendFormat:@"\n\nHTTP Header:\n%@", dataTask.currentRequest.allHTTPHeaderFields ? dataTask.currentRequest.allHTTPHeaderFields : @"\t\t\t\t\tN/A"];
+    [logString appendFormat:@"\nHTTP Header:\n%@", dataTask.currentRequest.allHTTPHeaderFields ? dataTask.currentRequest.allHTTPHeaderFields : @"\t\t\t\t\tN/A"];
     [logString appendFormat:@"\n\nHTTP Body:\n\t%@", [[NSString alloc] initWithData:dataTask.currentRequest.HTTPBody encoding:NSUTF8StringEncoding]];
     
     

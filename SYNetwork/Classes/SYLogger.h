@@ -29,7 +29,7 @@
 
 + (void)logDebugInfomationDataTask:(NSURLSessionDataTask *)dataTask
                            request:(SYRequest *)request
-                          response:(id)response;
+                          response:(SYResponse *)response;
 
 + (void)logDebugInfomationDataTask:(NSURLSessionDataTask *)dataTask
                            request:(SYRequest *)request

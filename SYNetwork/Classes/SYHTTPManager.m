@@ -77,11 +77,12 @@
             __weak typeof(self) weakSelf = self;
             dataTask = [self.sessionManager POST:makeFullUrl(request) parameters:makeFullParameters(request) progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
-                [SYLogger logDebugInfomationDataTask:task request:request response:responseObject];
                 SYResponse *resp = [[SYResponse alloc] initWithRequestId:@([task taskIdentifier])
                                                             responseData:responseObject
                                                                    error:nil];
                 weakSelf.currentRequestCount --;
+                [SYLogger logDebugInfomationDataTask:task request:request response:resp];
+
                 success(resp ,nil);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 weakSelf.currentRequestCount --;
