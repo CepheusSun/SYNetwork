@@ -3,12 +3,12 @@ Pod::Spec.new do |s|
   # pod 库名
   s.name             = 'SYNetwork'
   # pod 版本
-  s.version          = '0.4'
+  s.version          = '0.5'
   # pod 概述 
   s.summary          = 'A grest network frameworks.'
   # pod的详细描述
   s.description      = <<-DESC
-    ’this is A great network frameworks'
+    ’this is A great network frameworks with one beautiful logger'
                        DESC
   # pod 的主页
   s.homepage         = 'https://github.com/ProgramerSunny/SYNetwork'
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   # 作者信息
   s.author           = { 'ProgramerSunny' => 'cd_sunyang@163.com' }
   # pod 源码在 GitHub 的仓库地址,以及 pod 版本
-  s.source           = { :git => 'https://github.com/ProgramerSunny/SYNetwork.git', :tag => 0.4 }
+  s.source           = { :git => 'https://github.com/ProgramerSunny/SYNetwork.git', :tag => 0.5 }
   # pod 支持 iOS 系统
   s.ios.deployment_target = '8.0'
 

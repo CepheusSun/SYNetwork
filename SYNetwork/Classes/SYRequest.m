@@ -26,6 +26,7 @@
 #import "SYHTTPManager.h"
 #import "SYResponse.h"
 #import "SYRequestConfig.h"
+#import "SYLogger.h"
 
 @interface SYRequest ()
 
@@ -172,6 +173,7 @@ NSError *makeError(NSError *error){
         __strong typeof (weakSelf) strongSelf = weakSelf;
         SYResponse *response = [[SYResponse alloc] initWithData:data];
         response.requestParams = params;
+        [SYLogger logDebugInfoWithCachedResponse:response request:self];
         if (strongSelf.callBackDelegate && [strongSelf.callBackDelegate respondsToSelector:@selector(managerCallApiDidSuccess:)]) {
             [strongSelf.callBackDelegate managerCallApiDidSuccess:response];
         }else {

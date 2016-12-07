@@ -26,6 +26,7 @@
 #import "SYResponse.h"
 #import "SYRequest.h"
 #import "SYRequestParametersBuilder.h"
+#import "SYLogger.h"
 
 @interface SYHTTPManager ()
 
@@ -75,6 +76,8 @@
         {
             __weak typeof(self) weakSelf = self;
             dataTask = [self.sessionManager POST:makeFullUrl(request) parameters:makeFullParameters(request) progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                
+                [SYLogger logDebugInfomationDataTask:task request:request response:responseObject];
                 SYResponse *resp = [[SYResponse alloc] initWithRequestId:@([task taskIdentifier])
                                                             responseData:responseObject
                                                                    error:nil];
@@ -82,6 +85,7 @@
                 success(resp ,nil);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 weakSelf.currentRequestCount --;
+                [SYLogger logDebugInfomationDataTask:task request:request error:error];
                 fail([task taskIdentifier] ,error);
             }];
         }
@@ -90,12 +94,14 @@
         {
             __weak typeof(self) weakSelf = self;
             dataTask = [self.sessionManager GET:makeFullUrl(request) parameters:makeFullParameters(request) progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [SYLogger logDebugInfomationDataTask:task request:request response:responseObject];
                 SYResponse *resp = [[SYResponse alloc] initWithRequestId:@([task taskIdentifier])
                                                             responseData:responseObject
                                                                    error:nil];
                 weakSelf.currentRequestCount --;
                 success(resp ,nil);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                [SYLogger logDebugInfomationDataTask:task request:request error:error];
                 weakSelf.currentRequestCount --;
                 fail([task taskIdentifier] ,error);
             }];
