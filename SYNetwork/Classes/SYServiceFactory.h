@@ -1,5 +1,5 @@
 //
-//  SYViewController.m
+//  SYServiceFactory.h
 //  SYNetwork
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
@@ -21,29 +21,12 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
-#import "TestApi.h"
+#import <Foundation/Foundation.h>
+#import "SYService.h"
 
-@interface SYViewController ()
+@interface SYServiceFactory : NSObject
 
-@end
++ (instancetype)sharedInstance;
 
-@implementation SYViewController
-{
-    TestApi *_api;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
-}
-
+- (SYService<SYServiceProtocol> *)serviceWithIdentifier:(NSString *)identifier;
 @end

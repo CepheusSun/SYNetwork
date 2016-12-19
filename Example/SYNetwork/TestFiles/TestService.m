@@ -1,5 +1,5 @@
 //
-//  SYViewController.m
+//  TestService.m
 //  SYNetwork
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
@@ -21,29 +21,26 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
-#import "TestApi.h"
+#import "TestService.h"
+#import "TESTRequestParameterBuilder.h"
 
-@interface SYViewController ()
+@implementation TestService
 
-@end
-
-@implementation SYViewController
-{
-    TestApi *_api;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (SYRequestParametersBuilder *)requestParametersBuilder {
+    return [TESTRequestParameterBuilder sharedInstance];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
+- (NSString *)appkey {
+    return @"thisaiaappkey";
 }
+
+- (NSString *)apiVersion {
+    return @"v210/";
+}
+
+- (NSString *)baseUrl {
+    return @"http://xxxx.com/";
+}
+
 
 @end

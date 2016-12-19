@@ -1,5 +1,5 @@
 //
-//  SYViewController.m
+//  TestBaseApi.m
 //  SYNetwork
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
@@ -21,29 +21,12 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
-#import "TestApi.h"
+#import "TestBaseApi.h"
 
-@interface SYViewController ()
-
-@end
-
-@implementation SYViewController
-{
-    TestApi *_api;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
+@implementation TestBaseApi
+// 判断返回数据是否合法
+- (NSError *)isResponseIllegal:(SYResponse *)response {
+    return nil;
 }
 
 @end

@@ -1,6 +1,6 @@
 //
-//  SYViewController.m
-//  SYNetwork
+//  NSString+Encryption.m
+//  SYNetworking
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -21,29 +21,26 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
-#import "TestApi.h"
+#import "NSString+Encryption.h"
+#import <CommonCrypto/CommonDigest.h>
 
-@interface SYViewController ()
 
-@end
+@implementation NSString (Encryption)
 
-@implementation SYViewController
-{
-    TestApi *_api;
+- (NSString *)SY_md5 {
+    const char *cStr = [self UTF8String];
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    CC_MD5( cStr, (CC_LONG)strlen(cStr), digest );
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    return output;
 }
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
+- (NSString *)SY_base_64 {
+    NSData *plainData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64String = [plainData base64EncodedStringWithOptions:0];
+    return base64String;
 }
 
 @end

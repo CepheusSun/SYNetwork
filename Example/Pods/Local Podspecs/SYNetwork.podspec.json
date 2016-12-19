@@ -1,8 +1,8 @@
 {
   "name": "SYNetwork",
-  "version": "0.1",
+  "version": "2.2",
   "summary": "A grest network frameworks.",
-  "description": "’this is A great network frameworks'",
+  "description": "’this is A great network frameworks with one beautiful logger'",
   "homepage": "https://github.com/ProgramerSunny/SYNetwork",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ProgramerSunny/SYNetwork.git",
-    "tag": 0.1
+    "tag": 2.2
   },
   "platforms": {
     "ios": "8.0"

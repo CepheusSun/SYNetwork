@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'SYNetwork_Example' do
   pod 'SYNetwork', :path => '../'
-
+#pod 'AFNetworking'
   target 'SYNetwork_Tests' do
     inherit! :search_paths
 

@@ -26,6 +26,8 @@
 #import "SYRequestParametersBuilder.h"
 #import "SYNetwork.h"
 #import "SYRequestConfig.h"
+#import "SYServiceFactory.h"
+
 @interface SYCache ()
 
 @property (nonatomic ,strong) NSCache *cache;
@@ -50,24 +52,31 @@
     return sharedInstance;
 }
 
-- (NSData *)fetchCachedDataWithURL:(NSString *)URL
-                            requestParams:(NSDictionary *)requestParams {
-    return  [self fetchCachedDataWithKey:[self keyWithURL:URL
-                                                   requestParams:requestParams]];
+- (NSData *)fetchCachedDataWithServiceIdentifier:(NSString *)identifier
+                                             URL:(NSString *)URL
+                                   requestParams:(NSDictionary *)requestParams {
+    return  [self fetchCachedDataWithKey:[self keyWithServiceIdentifier:identifier
+                                                                    URL:URL
+                                                          requestParams:requestParams]];
 }
 
-- (void)saveCacheWithData:(NSData *)cachedData
-               URL:(NSString *)URL
-            requestParams:(NSDictionary *)requestParams {
-    [self saveCacheWithData:cachedData key:[self keyWithURL:URL
-                                              requestParams:requestParams]];
-}
-
-- (void)deleteCacheWithURL:(NSString *)URL
-                    requestParams:(NSDictionary *)requestParams {
+- (void)saveCacheWithServiceIdentifier:(NSString *)identifier
+                                  Data:(NSData *)cachedData
+                                   URL:(NSString *)URL
+                         requestParams:(NSDictionary *)requestParams {
     
-    [self deleteCacheWithKey:[self keyWithURL:URL
-                                    requestParams:requestParams]];
+    [self saveCacheWithData:cachedData key:[self keyWithServiceIdentifier:identifier
+                                                                      URL:URL
+                                                            requestParams:requestParams]];
+}
+
+- (void)deleteCacheServiceIdentifier:(NSString *)identifier
+                             WithURL:(NSString *)URL
+                       requestParams:(NSDictionary *)requestParams {
+    
+    [self deleteCacheWithKey:[self keyWithServiceIdentifier:identifier
+                                                        URL:URL
+                                              requestParams:requestParams]];
 }
 
 - (NSData *)fetchCachedDataWithKey:(NSString *)key {
@@ -95,9 +104,14 @@
     [self.cache removeAllObjects];
 }
 
-- (NSString *)keyWithURL:(NSString *)URL
-                requestParams:(NSDictionary *)requestParams {
-    return [NSString stringWithFormat:@"%@%@",URL ,[[SYRequestConfig sharedConfig].rebuildParametersManager cacheSaveKeyString:requestParams]];
+- (NSString *)keyWithServiceIdentifier:(NSString *)identifier
+                                   URL:(NSString *)URL
+                         requestParams:(NSDictionary *)requestParams {
+    
+    NSDictionary *serviceStorage = [SYRequestConfig sharedConfig].serviceStorage;
+    SYRequestParametersBuilder *builder = [[SYServiceFactory sharedInstance] serviceWithIdentifier:serviceStorage[identifier]].requestParametersBuilder;
+    
+    return [NSString stringWithFormat:@"%@%@",URL ,[builder cacheSaveKeyString:requestParams]];
 }
 
 @end

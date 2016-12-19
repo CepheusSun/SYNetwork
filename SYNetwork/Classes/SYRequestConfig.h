@@ -30,18 +30,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (SYRequestConfig *)sharedConfig;
 
-- (void)configBaseUrl:(NSString *)base
-          timeOutInterval:(NSTimeInterval)timeout
-          cacheCountLimit:(NSUInteger)cacheCountLimit
-  rebuildParametersManger:(SYRequestParametersBuilder*)rebuildParametersManager;
-    
-    
-- (NSString *)baseUrl;
-    
+/// if you hava more sevices with different base URL use the method to config.
+- (void)configTimeOutInterval:(NSTimeInterval)timeout
+              cacheCountLimit:(NSUInteger)cacheCountLimit
+               serviceStorage:(NSDictionary *)dictionary;
+
+/**
+ service storage use key-value to save service class name and identifier
+ */
+- (NSDictionary *)serviceStorage;
+
+/// timeout Interval
 - (NSTimeInterval)timeOutInterval;
-    
+
+/// cache count limit
 - (NSUInteger)cacheCountLimit;
 
-- (SYRequestParametersBuilder *)rebuildParametersManager;
 @end
 NS_ASSUME_NONNULL_END

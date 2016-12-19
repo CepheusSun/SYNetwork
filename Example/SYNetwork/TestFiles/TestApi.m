@@ -1,5 +1,5 @@
 //
-//  SYViewController.m
+//  TestApi.m
 //  SYNetwork
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
@@ -21,29 +21,41 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
 #import "TestApi.h"
 
-@interface SYViewController ()
-
-@end
-
-@implementation SYViewController
+@implementation TestApi
 {
-    TestApi *_api;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+    NSString *_username;
+    NSString *_password;
+    LoginType _logintype;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
+- (id)initWithUserName:(NSString *)username password:(NSString *)password logintype:(LoginType)logintype {
+    self = [super init];
+    if (self) {
+        _username = username;
+        _password = password;
+        _logintype = logintype;
+    }
+    return self;
 }
 
+- (NSString *)requestUrl {
+    return @"api/user/login";
+}
+
+- (NSUInteger)cacheTimeInterval {
+    return 100;
+}
+- (NSMutableDictionary *)requestParams {
+    return @{
+             @"phone": _username,
+             @"code" : _password,
+             @"type" : [NSString stringWithFormat:@"%@",@(_logintype)]
+             }.mutableCopy;
+}
+
+- (NSString *)serviceType {
+    return @"TestTypeOne";
+}
 @end

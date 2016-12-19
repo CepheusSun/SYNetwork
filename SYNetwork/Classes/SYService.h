@@ -1,5 +1,5 @@
 //
-//  SYViewController.m
+//  SYService.h
 //  SYNetwork
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
@@ -21,29 +21,23 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
-#import "TestApi.h"
+#import <Foundation/Foundation.h>
 
-@interface SYViewController ()
+@class SYRequestParametersBuilder;
+@protocol SYServiceProtocol <NSObject>
+
+@property (nonatomic ,copy) NSString *appkey;
+@property (nonatomic ,copy) NSString *apiVersion;
+@property (nonatomic ,copy) NSString *baseUrl;
+@property (nonatomic ,weak) SYRequestParametersBuilder *requestParametersBuilder;
 
 @end
+@interface SYService : NSObject
 
-@implementation SYViewController
-{
-    TestApi *_api;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
+@property (nonatomic ,copy) NSString *appkey;
+@property (nonatomic ,copy) NSString *apiVersion;
+@property (nonatomic ,copy) NSString *baseUrl;
+@property (nonatomic ,weak) SYRequestParametersBuilder *requestParametersBuilder;
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
-}
-
+@property (nonatomic, weak) id<SYServiceProtocol> child;
 @end

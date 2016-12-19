@@ -63,7 +63,7 @@
 
 #pragma mark - calling api
 - (NSInteger)start {
-    if ([self shouldCache] && [self hasCacheWithParams:self.requestParams]) {
+    if ([self cacheTimeInterval] > 0 && [self hasCacheWithParams:self.requestParams]) {
         return 0;
     }
     NSInteger requestId = -1;
@@ -111,8 +111,8 @@
         [self callBackFailure:error];
         return;
     }
-    if ([self shouldCache]) {
-        [self.cahce saveCacheWithData:response.responseData URL:self.requestUrl requestParams:self.requestParams];
+    if ([self cacheTimeInterval] > 0) {
+        [self.cahce saveCacheWithServiceIdentifier:self.serviceType Data:response.responseData URL:self.requestUrl requestParams:self.requestParams];
     }
 }
 
@@ -164,7 +164,11 @@ NSError *makeError(NSError *error){
 }
 
 - (BOOL)hasCacheWithParams:(NSDictionary *)params {
-    NSData *data = [self.cahce fetchCachedDataWithURL:self.requestUrl requestParams:self.requestParams];
+    
+    NSData *data = [self.cahce fetchCachedDataWithServiceIdentifier:self.serviceType
+                                                                URL:self.requestUrl
+                                                      requestParams:self.requestParams];
+    
     if (data == nil) {
         return NO;
     }
@@ -186,8 +190,12 @@ NSError *makeError(NSError *error){
 }
 
 #pragma override
-- (BOOL)shouldCache {
-    return NO;
+- (NSUInteger)cacheTimeInterval {
+    return 0;
+}
+
+- (NSString *)serviceType {
+    return @"";
 }
 
 -(BOOL)useCDN {

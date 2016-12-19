@@ -1,6 +1,6 @@
 //
-//  SYViewController.m
-//  SYNetwork
+//  NSDictionary+SYNetworking.h
+//  SYNetworking
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -21,29 +21,11 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
-#import "TestApi.h"
+#import <Foundation/Foundation.h>
 
-@interface SYViewController ()
+@interface NSDictionary (SYNetworking)
 
-@end
+- (NSString *)keyString;
 
-@implementation SYViewController
-{
-    TestApi *_api;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
-}
-
+- (NSMutableDictionary *)signWithPublicKey:(NSString *)publicKey;
 @end

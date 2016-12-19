@@ -30,6 +30,7 @@
     NSString *_baseUrl;
     NSTimeInterval _timeOutInterval;
     NSUInteger _cacheLimitCount;
+    NSDictionary *_serviceStorage;
     SYRequestParametersBuilder *_requestParametersBuilder;
 }
 
@@ -45,16 +46,23 @@
 - (void)configBaseUrl:(NSString *)base
       timeOutInterval:(NSTimeInterval)timeout
       cacheCountLimit:(NSUInteger)cacheCountLimit
-rebuildParametersManger:(SYRequestParametersBuilder*)rebuildParametersManager {
+rebuildParametersManger:(nonnull SYRequestParametersBuilder *)rebuildParametersManager {
     _baseUrl = base ? [base copy] : nil;
     _timeOutInterval = timeout ? timeout : 60;
     _cacheLimitCount = cacheCountLimit ? cacheCountLimit : 1000;
     _requestParametersBuilder = rebuildParametersManager;
 }
 
-- (NSString *)baseUrl {
-    NSAssert(_baseUrl.length > 0, @"baseUrl can't be nil");
-    return _baseUrl;
+- (void)configTimeOutInterval:(NSTimeInterval)timeout
+              cacheCountLimit:(NSUInteger)cacheCountLimit
+               serviceStorage:(NSDictionary *)dictionary {
+    _timeOutInterval = timeout ? timeout : 60;
+    _cacheLimitCount = cacheCountLimit ? cacheCountLimit : 1000;
+    _serviceStorage = dictionary;
+}
+
+- (NSDictionary *)serviceStorage {
+    return _serviceStorage;
 }
     
 - (NSTimeInterval)timeOutInterval {
@@ -65,7 +73,4 @@ rebuildParametersManger:(SYRequestParametersBuilder*)rebuildParametersManager {
     return _cacheLimitCount;
 }
 
-- (SYRequestParametersBuilder *)rebuildParametersManager {
-    return _requestParametersBuilder;
-}
 @end

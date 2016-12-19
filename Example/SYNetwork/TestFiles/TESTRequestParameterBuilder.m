@@ -1,5 +1,5 @@
 //
-//  SYViewController.m
+//  TESTRequestParameterBuilder.m
 //  SYNetwork
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
@@ -21,29 +21,17 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
-#import "TestApi.h"
+#import "TESTRequestParameterBuilder.h"
+#import "NSDictionary+SYNetworking.h"
+#import "SYServiceFactory.h"
 
-@interface SYViewController ()
+@implementation TESTRequestParameterBuilder
 
-@end
-
-@implementation SYViewController
-{
-    TestApi *_api;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (NSDictionary *)rebuildParameters:(SYRequest *)request {
+    return [request.requestParams signWithPublicKey:[[SYServiceFactory sharedInstance] serviceWithIdentifier:request.serviceType].appkey];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
+- (NSString *)cacheSaveKeyString:(NSDictionary *)parcmeters {
+    return [parcmeters keyString];
 }
-
 @end

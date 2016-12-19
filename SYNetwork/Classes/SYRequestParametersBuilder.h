@@ -22,7 +22,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SYRequest.h"
 /**
  这个类用来做签名 应该会更加优雅
  */
@@ -31,7 +31,7 @@
 
 + (SYRequestParametersBuilder *)sharedInstance;
 
-- (NSDictionary *)rebuildParameters:(NSDictionary *)parameters;
+- (NSDictionary *)rebuildParameters:(SYRequest *)request;
 
 /**
  生成缓存的key  这个方法必须由字类实现

@@ -28,8 +28,9 @@
 
 + (instancetype)sharedInstance;
 
-- (NSString *)keyWithURL:(NSString *)URL
-           requestParams:(NSDictionary *)requestParams;
+- (NSString *)keyWithServiceIdentifier:(NSString *)identifier
+                                   URL:(NSString *)URL
+                         requestParams:(NSDictionary *)requestParams;
 
 /**
  获得缓存的对象
@@ -38,8 +39,9 @@
  @param requestParams 请求参数
  @return 缓存对象
  */
-- (NSData *)fetchCachedDataWithURL:(NSString *)URL
-                            requestParams:(NSDictionary *)requestParams;
+- (NSData *)fetchCachedDataWithServiceIdentifier:(NSString *)identifier
+                                             URL:(NSString *)URL
+                                   requestParams:(NSDictionary *)requestParams;
 
 
 /**
@@ -49,9 +51,10 @@
  @param URL 请求地址
  @param requestParams 请求参数
  */
-- (void)saveCacheWithData:(NSData *)cachedData
-                      URL:(NSString *)URL
-            requestParams:(NSDictionary *)requestParams;
+- (void)saveCacheWithServiceIdentifier:(NSString *)identifier
+                                  Data:(NSData *)cachedData
+                                   URL:(NSString *)URL
+                         requestParams:(NSDictionary *)requestParams;
 
 
 /**
@@ -59,8 +62,9 @@
  @param URL 请求地址
  @param requestParams 请求参数
  */
-- (void)deleteCacheWithURL:(NSString *)URL
-                    requestParams:(NSDictionary *)requestParams;
+- (void)deleteCacheServiceIdentifier:(NSString *)identifier
+                             WithURL:(NSString *)URL
+                       requestParams:(NSDictionary *)requestParams;
 
 
 

@@ -15,6 +15,51 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 
 
+## 2.0 新特性
+
+**增加 service 支持**，不同的 service 可以有不同的 baseUrl 也可以有不同的 apiversion 也可以使用不同的 appkey。
+
+对应 `AppDelegate `中的方法对应修改
+
+```objective-c
+//    [[SYRequestConfig sharedConfig] configBaseUrl:@"http://api.endclient.test.dph168.com/v210/"
+//                                  timeOutInterval:20
+//                                  cacheCountLimit:1000
+//                          rebuildParametersManger:[TESTRequestParameterBuilder sharedInstance]];
+//    
+    
+    [[SYRequestConfig sharedConfig] configTimeOutInterval:20
+                                          cacheCountLimit:1000
+                                           serviceStorage:@{@"TestTypeOne" : @"TestService"}];
+```
+
+对应的在继承于 `SYService`的 `service`字类中添加相应的属性。可以参考 demo 
+
+
+
+并且为了做出对应修改，**在`SYRequest`基类中添加对应方法设置 这个api 所属的 service** 。对应在之类中只需要添加对应方法。
+
+```objective-c
+- (NSString *)serviceType {
+    return @"TestTypeOne";
+}
+
+```
+
+
+
+**SYService** 中添加
+
+```objective-c
+- (SYRequestParametersBuilder *)requestParametersBuilder {
+    return [TESTRequestParameterBuilder sharedInstance];
+}
+```
+
+相关方法，将签名相关的类，移动到这个地方，实现不同的service可以有不同的签名规则。
+
+
+
 ## 原理
 
 ### 组成
@@ -52,12 +97,12 @@ SYNetwork 由下面两个部分组成
   - SYCacheObject 
 
     > 缓存的对象
-    
+
 * SYLogger
 
  > 一个漂亮的Logger
- 
- 
+
+
 ## 加入
 
 #### 1、直接将源文件拉进你的工程

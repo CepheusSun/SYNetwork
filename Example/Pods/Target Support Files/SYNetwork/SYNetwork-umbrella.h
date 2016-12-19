@@ -13,11 +13,14 @@
 #import "SYCache.h"
 #import "SYCacheObject.h"
 #import "SYHTTPManager.h"
+#import "SYLogger.h"
 #import "SYNetwork.h"
 #import "SYRequest.h"
 #import "SYRequestConfig.h"
 #import "SYRequestParametersBuilder.h"
 #import "SYResponse.h"
+#import "SYService.h"
+#import "SYServiceFactory.h"
 
 FOUNDATION_EXPORT double SYNetworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char SYNetworkVersionString[];

@@ -34,8 +34,8 @@
     return sharedInstance;
 }
 
-- (NSDictionary *)rebuildParameters:(NSDictionary *)parameters {
-    return parameters;
+- (NSDictionary *)rebuildParameters:(SYRequest *)request{
+    return request.requestParams;
 }
 
 - (NSString *)cacheSaveKeyString:(NSDictionary *)parcmeters {

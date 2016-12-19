@@ -27,6 +27,7 @@
 #import "SYRequest.h"
 #import "SYRequestParametersBuilder.h"
 #import "SYLogger.h"
+#import "SYServiceFactory.h"
 
 @interface SYHTTPManager ()
 
@@ -144,11 +145,16 @@
 
 #pragma mark - private
 NSString* makeFullUrl(SYRequest *request) {
-    return [NSString stringWithFormat:@"%@%@",[[SYRequestConfig sharedConfig] baseUrl],request.requestUrl];
+
+    NSString *url = [[[SYServiceFactory sharedInstance] serviceWithIdentifier:request.serviceType] baseUrl];
+    NSString *apiVersion = [[[SYServiceFactory sharedInstance] serviceWithIdentifier:request.serviceType] apiVersion];
+    
+    return [NSString stringWithFormat:@"%@%@%@",url,apiVersion,request.requestUrl];
 }
 
 NSDictionary* makeFullParameters(SYRequest *request) {
-    return [[SYRequestConfig sharedConfig].rebuildParametersManager rebuildParameters:request.requestParams];
+
+    return [[[[SYServiceFactory sharedInstance] serviceWithIdentifier:request.serviceType] requestParametersBuilder] rebuildParameters:request];
 }
 #pragma mark - 监测网络状态
 -(BOOL)isReachability {

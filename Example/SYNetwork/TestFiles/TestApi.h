@@ -1,5 +1,5 @@
 //
-//  SYViewController.m
+//  TestApi.h
 //  SYNetwork
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
@@ -21,29 +21,14 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#import "SYViewController.h"
-#import "TestApi.h"
+#import "TestBaseApi.h"
 
-@interface SYViewController ()
 
-@end
+typedef NS_ENUM(NSInteger, LoginType){
+    LoginTypePassword,
+    LoginTypeVerifyCode
+};
 
-@implementation SYViewController
-{
-    TestApi *_api;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _api = [[TestApi alloc] initWithUserName:@"xxxxxxxx" password:@"xxxx" logintype:LoginTypePassword];
-    [_api startWithSuccessBlock:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"success");
-    } failureBlbck:^(SYResponse *response, NSString *errorMessage) {
-        NSLog(@"fail");
-    }];
-}
-
+@interface TestApi : TestBaseApi
+- (id)initWithUserName:(NSString *)username password:(NSString *)password logintype:(LoginType)logintype;
 @end

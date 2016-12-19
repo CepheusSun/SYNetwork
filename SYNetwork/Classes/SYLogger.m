@@ -34,11 +34,17 @@
     NSMutableString *logString = [NSMutableString stringWithString:
                                   @"\n\n**************************************************************\n*                       Request Start                        *\n**************************************************************\n\n"];
     
-    [logString appendFormat:@"API Name:\t\t%@\n", dataTask.currentRequest.URL];
-    [logString appendFormat:@"Method:\t\t\t%lu\n", (unsigned long)request.requestType];
-    [logString appendFormat:@"Params:\n%@", request.requestParams];
+    [logString appendFormat:@"API Name:\t%@\n", dataTask.currentRequest.URL];
+    switch (request.requestType) {
+        case SYRequestPost:
+            [logString appendFormat:@"Method:\t%@\n", @"RESTful POST"];
+            break;
+        case SYRequestGet:
+            [logString appendFormat:@"Method:\t%@\n", @"RESTful GET"];
+            break;
+    }
+    [logString appendFormat:@"Params:\n%@\n\n", request.requestParams];
     [logString appendFormat:@"Response:\n%@", response.content];
-    [logString appendString:@"\n---------------  Related Request Content  --------------\n"];
     
     [logString appendFormat:@"\nHTTP Header:\n%@", dataTask.currentRequest.allHTTPHeaderFields ? dataTask.currentRequest.allHTTPHeaderFields : @"\t\t\t\t\tN/A"];
     [logString appendFormat:@"\n\nHTTP Body:\n\t%@", [[NSString alloc] initWithData:dataTask.currentRequest.HTTPBody encoding:NSUTF8StringEncoding]];
@@ -53,34 +59,38 @@
 + (void)logDebugInfomationDataTask:(NSURLSessionDataTask *)dataTask
                            request:(SYRequest *)request
                              error:(NSError *)error {
-    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                        API Response                        =\n==============================================================\n\n"];
+    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                        Request Start                        =\n==============================================================\n\n"];
     
     [logString appendFormat:@"API Name:\t\t%@\n", dataTask.currentRequest.URL];
-    [logString appendFormat:@"Method:\t\t\t%lu\n", (unsigned long)request.requestType];
+    switch (request.requestType) {
+        case SYRequestPost:
+            [logString appendFormat:@"Method:\t\t\t%@\n", @"RESTful POST"];
+            break;
+        case SYRequestGet:
+            [logString appendFormat:@"Method:\t\t\t%@\n", @"RESTful GET"];
+            break;
+    }
     [logString appendFormat:@"Params:\n%@", request.requestParams];
     
     [logString appendString:@"\n---------------  Related Request Content  --------------\n"];
 
     [logString appendFormat:@"\n\nHTTP Header:\n%@", dataTask.currentRequest.allHTTPHeaderFields ? dataTask.currentRequest.allHTTPHeaderFields : @"\t\t\t\t\tN/A"];
-    [logString appendFormat:@"\n\nHTTP Body:\n\t%@", [[NSString alloc] initWithData:dataTask.currentRequest.HTTPBody encoding:NSUTF8StringEncoding]];
+    [logString appendFormat:@"\n\nHTTP Body:\n\n%@", [[NSString alloc] initWithData:dataTask.currentRequest.HTTPBody encoding:NSUTF8StringEncoding]];
     
-    
-    [logString appendFormat:@"Error Domain:\t\t\t\t\t\t\t%@\n", error.domain];
+    [logString appendFormat:@"Error Domain:\t\t\t\t\t\t%@\n", error.domain];
     [logString appendFormat:@"Error Domain Code:\t\t\t\t\t\t%ld\n", (long)error.code];
     [logString appendFormat:@"Error Localized Description:\t\t\t%@\n", error.localizedDescription];
     [logString appendFormat:@"Error Localized Failure Reason:\t\t\t%@\n", error.localizedFailureReason];
     [logString appendFormat:@"Error Localized Recovery Suggestion:\t%@\n\n", error.localizedRecoverySuggestion];
     
-    
-    
-    [logString appendFormat:@"\n\n==============================================================\n=                        Response End                        =\n==============================================================\n\n\n\n"];
+    [logString appendFormat:@"\n\n==============================================================\n=                        Request End                        =\n==============================================================\n\n\n\n"];
     printf("%s", [logString UTF8String]);
 }
 
 + (void)logDebugInfoWithCachedResponse:(SYResponse *)response
                                request:(SYRequest *)request {
     
-    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                        API Response                        =\n==============================================================\n\n"];
+    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                        Cached Response                     =\n==============================================================\n\n"];
     [logString appendFormat:@"API Name:\t\t%@\n",request.requestUrl];
     [logString appendFormat:@"Params:\n%@\n\n" ,response.requestParams];
     [logString appendFormat:@"Contents:\n\t%@\n\n",response.content];

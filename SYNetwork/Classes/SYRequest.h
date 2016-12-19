@@ -61,7 +61,8 @@ typedef void(^SYRequestFinishedBlock)(SYResponse *response, NSString *errorMessa
 #pragma mark ---- override by child
 - (NSString *)requestUrl;//  请求URL
 - (SYRequestType)requestType;// default POST
-- (BOOL)shouldCache; //是否缓存 default NO
+- (NSUInteger)cacheTimeInterval; //是否缓存 default NO
+- (NSString *)serviceType;
 - (NSMutableDictionary *)requestParams;// 请求参数
 - (NSError *)isResponseIllegal:(SYResponse *)response; // 对数据进行校验，并对数据业务逻辑的失败进行处理
 //开始请求
