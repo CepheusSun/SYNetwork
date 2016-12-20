@@ -23,10 +23,10 @@
 
 #import <Foundation/Foundation.h>
 #import "SYRequest.h"
+
 /**
  这个类用来做签名 应该会更加优雅
  */
-
 @interface SYRequestParametersBuilder : NSObject
 
 + (SYRequestParametersBuilder *)sharedInstance;

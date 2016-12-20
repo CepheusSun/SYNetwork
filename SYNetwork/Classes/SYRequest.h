@@ -26,16 +26,24 @@
 static NSString * const kAPIBaseManagerRequestID = @"kAPIBaseManagerRequestID";
 
 typedef NS_ENUM (NSUInteger, SYAPIErrorType){
+    /// never have a request ,this is the default state of the manager
     SYAPIErrorTypeDefault,       //没有产生过API请求，这个是manager的默认状态。
+    /// this status means that the request is succeed with the correct data which can be used correctly
     SYAPIErrorTypeSuccess,       //API请求成功且返回数据正确，此时manager的数据是可以直接拿来使用的。
+    /// this status means that the request is succeed with the illegal data which can not to be used
     SYAPIErrorTypeNoContent,     //API请求成功但返回数据不正确。如果回调数据验证函数返回值为NO，manager的状态就会是这个。
+    /// this status means that the request arguement is not in the right format
     SYAPIErrorTypeParamsError,   //参数错误，此时manager不会调用API，因为参数验证是在调用API之前做的。
-    SYAPIErrorTypeTimeout,       //请求超时。CTAPIProxy设置的是20秒超时，具体超时时间的设置请自己去看CTAPIProxy的相关代码。
+    /// this status means that the request is overtime
+    SYAPIErrorTypeTimeout,       //请求超时。CTAPIProxy设置的是20秒超时，具体超时时间的设置在config中由业务层自己设置的相关代码。
+    /// this status mrans that the internet is unavailable
     SYAPIErrorTypeNoNetWork      //网络不通。在调用API之前会判断一下当前网络是否通畅，这个也是在调用API之前验证的，和上面超时的状态是有区别的。
 };
 
 typedef NS_ENUM (NSUInteger, SYRequestType){
+    /// GET
     SYRequestGet,
+    /// POST
     SYRequestPost
 };
 

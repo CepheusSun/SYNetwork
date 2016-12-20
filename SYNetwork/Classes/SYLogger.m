@@ -78,9 +78,9 @@
     [logString appendFormat:@"\n\nHTTP Body:\n\n%@", [[NSString alloc] initWithData:dataTask.currentRequest.HTTPBody encoding:NSUTF8StringEncoding]];
     
     [logString appendFormat:@"Error Domain:\t\t\t\t\t\t%@\n", error.domain];
-    [logString appendFormat:@"Error Domain Code:\t\t\t\t\t\t%ld\n", (long)error.code];
+    [logString appendFormat:@"Error Domain Code:\t\t\t\t\t%ld\n", (long)error.code];
     [logString appendFormat:@"Error Localized Description:\t\t\t%@\n", error.localizedDescription];
-    [logString appendFormat:@"Error Localized Failure Reason:\t\t\t%@\n", error.localizedFailureReason];
+    [logString appendFormat:@"Error Localized Failure Reason:\t\t%@\n", error.localizedFailureReason];
     [logString appendFormat:@"Error Localized Recovery Suggestion:\t%@\n\n", error.localizedRecoverySuggestion];
     
     [logString appendFormat:@"\n\n==============================================================\n=                        Request End                        =\n==============================================================\n\n\n\n"];

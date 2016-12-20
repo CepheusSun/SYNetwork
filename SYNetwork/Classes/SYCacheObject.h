@@ -23,7 +23,8 @@
 
 #import <Foundation/Foundation.h>
 
-// 缓存的对象
+/// this is the data which needed to be cached or fetch from the caches.
+/// this class is NOT OPEN to the business services
 @interface SYCacheObject : NSObject
 
 @property (nonatomic ,copy , readonly) NSData *content;

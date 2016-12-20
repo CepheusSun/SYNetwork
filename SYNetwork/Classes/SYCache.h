@@ -23,76 +23,90 @@
 
 #import <Foundation/Foundation.h>
 
-// 缓存工具类
+
+// A tool about caches of SYNetwork. this class is NOT OPEN for business layer
 @interface SYCache : NSObject
 
+/// get the singleton instance of SYCache
 + (instancetype)sharedInstance;
 
+/**
+ this method use to create the key to cache the datas, 
+ this key is make of the service identifier the URL and the request params.
+ this is a NSString instance
+
+ @param identifier identifier if the request
+ @param URL the URL
+ @param requestParams the request arguements
+ @return the key to save the caches
+ */
 - (NSString *)keyWithServiceIdentifier:(NSString *)identifier
                                    URL:(NSString *)URL
                          requestParams:(NSDictionary *)requestParams;
 
 /**
- 获得缓存的对象
+ fetch cached data
 
- @param URL 请求地址
- @param requestParams 请求参数
- @return 缓存对象
+ @param identifier the identifier of the request
+ @param URL the URL
+ @param requestParams the request arguements
+ @return cached data
  */
 - (NSData *)fetchCachedDataWithServiceIdentifier:(NSString *)identifier
                                              URL:(NSString *)URL
                                    requestParams:(NSDictionary *)requestParams;
 
-
 /**
- 存储网络请求的数据
+ save the caches of SYNetwork response
 
- @param cachedData 需要缓存的内容
- @param URL 请求地址
- @param requestParams 请求参数
+ @param identifier the identifier of the request
+ @param cachedData the data which need to be cached
+ @param URL the request URL
+ @param requestParams the requesr arguements
  */
 - (void)saveCacheWithServiceIdentifier:(NSString *)identifier
                                   Data:(NSData *)cachedData
                                    URL:(NSString *)URL
                          requestParams:(NSDictionary *)requestParams;
 
-
 /**
- 根据参数方法名和参数删除本地缓存
- @param URL 请求地址
- @param requestParams 请求参数
+ delete the caches when it is useless or overtime
+
+ @param identifier the identifier if the request
+ @param URL the URL
+ @param requestParams the request arguements
  */
 - (void)deleteCacheServiceIdentifier:(NSString *)identifier
                              WithURL:(NSString *)URL
                        requestParams:(NSDictionary *)requestParams;
 
 
-
 /**
- 通过key 获得缓存对象
+ fetch the data according to the key
 
- @param key key值
- @return 缓存的对象
+ @param key this key string
+ @return the cached data
  */
 - (NSData *)fetchCachedDataWithKey:(NSString *)key;
 
-/**
- 根据key 缓存
 
- @param cachedData 缓存的对象
- @param key key
+/**
+ caches the data according to the key string
+
+ @param cachedData the data which needed to be cached
+ @param key the key string
  */
 - (void)saveCacheWithData:(NSData *)cachedData key:(NSString *)key;
 
 /**
- 根据key删除缓存
+ delete the cached data according to the key
 
- @param key key值
+ @param key the key string
  */
 - (void)deleteCacheWithKey:(NSString *)key;
 
 /**
- 清空缓存
+ clean the cached data
  */
 - (void)clean;
 

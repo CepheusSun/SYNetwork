@@ -26,16 +26,17 @@
 
 @interface SYLogger : NSObject
 
-
+/// a beautiful logger when the request SUCCESS
 + (void)logDebugInfomationDataTask:(NSURLSessionDataTask *)dataTask
                            request:(SYRequest *)request
                           response:(SYResponse *)response;
 
+/// a beautiful logger when the request fail
 + (void)logDebugInfomationDataTask:(NSURLSessionDataTask *)dataTask
                            request:(SYRequest *)request
                              error:(NSError *)error;
 
-
+/// a beautiful logger when the request fetched data from cache
 + (void)logDebugInfoWithCachedResponse:(SYResponse *)response
                                request:(SYRequest *)request;
 @end

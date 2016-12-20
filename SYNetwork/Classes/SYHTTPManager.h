@@ -23,34 +23,68 @@
 
 #import <Foundation/Foundation.h>
 
-/*
- *由这个类统一发出请求
- */
+/// ALL kinds of requests are start from this kind of class,
+/// this class is use to interactive with AFNetwork
+/// this class is NOT OPEN to the busness layer.
 
-// 为以后根据网络情况作不同的处理
+/// because we ususlly need to have a different behaviors according to the different network environment
+/// so this kind of ENUM is used
 typedef NS_ENUM(NSInteger, SYRequestReachabilityStatus) {
+    /// we don't know which kind of environment this devices is in
     SYRequestReachabilityStatusUnknow = 0,
+    /// the device can not connect to the internet.
     SYRequestReachabilityStatusNotReachable,
+    /// the device can use the internet by the mobile
     SYRequestReachabilityStatusViaWWAN,
+    /// the device can use the internet by the wifi, which means the users are in the best internet environment
     SYRequestReachabilityStatusViaWiFi
 };
 
 @class SYRequest;
 @class SYResponse;
+
+/// success and failure blocks when we get the result from the AFNetwork and give the datas to the SYNetwork layer
 typedef void(^SYCallBackSuccess)(SYResponse *response , NSError *error);
 typedef void(^SYCallBackFail)(NSUInteger requestID ,NSError *error);
+
 @interface SYHTTPManager : NSObject
+
+/// the methods to get the singleton instance
 + (instancetype)sharedInstance;
 
+/**
+ to start the request, all kinds of requests are started from this method.
+ in the future we will support a serialization requests, 
+ maybe this mehtod would not be the only one or would be UNAVAILABLE
+
+ @param request the request instance whitch provide the URL, the arguements and the request methods.
+ @param success a block when the request is succeed
+ @param fail a block when the request is failed
+ @return return the NSURLSessionDataTask's tastIdentifier which can be used to cancle a request
+ */
 - (NSInteger)startRequest:(SYRequest *)request
                   success:(SYCallBackSuccess)success
                      fail:(SYCallBackFail)fail;
 
+
+/**
+ cancle a request according to the NSURLSessionDataTask's tastIdentifier
+
+ @param requestID the id
+ */
 - (void)cancelRequestWithRequestID:(NSNumber *)requestID;
 
+/**
+ cancle a list of requests according to a list of the NSURLSessionDataTask's tastIdentifier
+
+ @param requestIDList a list of ids
+ */
 - (void)cancelRequestWithRequestIDList:(NSArray *)requestIDList;
 
+/// this properties is used to get tell the SYnetwork if the network is available
 @property (nonatomic ,assign ,getter=isReachability) BOOL reachability;
+
+///  
 @property (nonatomic, assign, readonly) SYRequestReachabilityStatus reachabilityStatus;
 
 @end

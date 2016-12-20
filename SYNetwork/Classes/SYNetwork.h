@@ -44,7 +44,7 @@
 #else
 #import "AFNetworking.h"
 #endif
-
+#import "SYService.h"
 #import "SYResponse.h"
 #import "SYRequestConfig.h"
 

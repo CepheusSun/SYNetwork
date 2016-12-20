@@ -116,6 +116,7 @@
     return [requestID integerValue];
 }
 
+#pragma mark - cancel request
 - (void)cancelRequestWithRequestID:(NSNumber *)requestID {
     self.currentRequestCount --;
     NSURLSessionTask *requestOperation = self.dispatchTable[requestID];
@@ -156,6 +157,7 @@ NSDictionary* makeFullParameters(SYRequest *request) {
 
     return [[[[SYServiceFactory sharedInstance] serviceWithIdentifier:request.serviceType] requestParametersBuilder] rebuildParameters:request];
 }
+
 #pragma mark - 监测网络状态
 -(BOOL)isReachability {
     if (self.reachabilityStatus != SYRequestReachabilityStatusNotReachable) {
