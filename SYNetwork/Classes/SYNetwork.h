@@ -47,5 +47,8 @@
 #import "SYService.h"
 #import "SYResponse.h"
 #import "SYRequestConfig.h"
+#import "SYServiceFactory.h"
+#import "SYRequestParametersBuilder.h"
+#import "SYRequest.h"
 
 #endif /* SYNetwork_h */
