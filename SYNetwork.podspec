@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   # pod 库名
   s.name             = 'SYNetwork'
   # pod 版本
-  s.version          = "2.5.1"
+  s.version          = "2.5.2"
   # pod 概述 
   s.summary          = 'A grest network frameworks.'
   # pod的详细描述
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   # 作者信息
   s.author           = { 'CepheusSun' => 'cd_sunyang@163.com' }
   # pod 源码在 GitHub 的仓库地址,以及 pod 版本
-  s.source           = { :git => 'https://github.com/CepheusSun/SYNetwork.git', :tag => 2.5.1 }
+  s.source           = { :git => 'https://github.com/CepheusSun/SYNetwork.git', :tag => s.version }
   # pod 支持 iOS 系统
   s.ios.deployment_target = '8.0'
 
