@@ -81,4 +81,5 @@ typedef void(^SYRequestFinishedBlock)(SYResponse *response, NSString *errorMessa
 // 取消请求
 - (void)cancelAllRequest;
 - (void)cancelRequestWithrequestId:(NSInteger)requrstId;
+
 @end

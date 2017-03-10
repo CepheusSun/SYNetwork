@@ -24,7 +24,7 @@
 #import <Foundation/Foundation.h>
 #import "SYRequest.h"
 
-/**
+/**   应该要废弃这个类,将这个类的相关功能移动到 SYService 类中
  这个类用来做签名 应该会更加优雅
  */
 @interface SYRequestParametersBuilder : NSObject
