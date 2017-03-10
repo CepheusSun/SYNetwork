@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   # 许可证书
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   # 作者信息
-  s.author           = { 'ProgramerSunny' => 'cd_sunyang@163.com' }
+  s.author           = { 'CepheusSun' => 'cd_sunyang@163.com' }
   # pod 源码在 GitHub 的仓库地址,以及 pod 版本
   s.source           = { :git => 'https://github.com/ProgramerSunny/SYNetwork.git', :tag => 2.4 }
   # pod 支持 iOS 系统

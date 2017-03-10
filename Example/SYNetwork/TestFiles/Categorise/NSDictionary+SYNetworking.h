@@ -28,4 +28,5 @@
 - (NSString *)keyString;
 
 - (NSMutableDictionary *)signWithPublicKey:(NSString *)publicKey;
+
 @end
