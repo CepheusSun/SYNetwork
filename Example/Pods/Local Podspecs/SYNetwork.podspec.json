@@ -1,6 +1,6 @@
 {
   "name": "SYNetwork",
-  "version": "2.2",
+  "version": "2.4",
   "summary": "A grest network frameworks.",
   "description": "’this is A great network frameworks with one beautiful logger'",
   "homepage": "https://github.com/ProgramerSunny/SYNetwork",
@@ -9,11 +9,11 @@
     "file": "LICENSE"
   },
   "authors": {
-    "ProgramerSunny": "cd_sunyang@163.com"
+    "CepheusSun": "cd_sunyang@163.com"
   },
   "source": {
     "git": "https://github.com/ProgramerSunny/SYNetwork.git",
-    "tag": 2.2
+    "tag": 2.4
   },
   "platforms": {
     "ios": "8.0"

@@ -37,9 +37,11 @@
     return self;
 }
 
-- (SYRequestParametersBuilder *)requestParametersBuilder {
-    return nil;
+
+- (NSDictionary *)makeParams:(NSDictionary *)originParams {
+    return originParams;
 }
+
 - (NSString *)appkey {
     return @"";
 }

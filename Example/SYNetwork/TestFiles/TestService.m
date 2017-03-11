@@ -22,13 +22,9 @@
 //
 
 #import "TestService.h"
-#import "TESTRequestParameterBuilder.h"
 
 @implementation TestService
 
-- (SYRequestParametersBuilder *)requestParametersBuilder {
-    return [TESTRequestParameterBuilder sharedInstance];
-}
 
 - (NSString *)appkey {
     return @"thisaiaappkey";

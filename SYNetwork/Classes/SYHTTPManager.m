@@ -25,7 +25,6 @@
 #import "SYNetwork.h"
 #import "SYResponse.h"
 #import "SYRequest.h"
-#import "SYRequestParametersBuilder.h"
 #import "SYLogger.h"
 #import "SYServiceFactory.h"
 
@@ -155,7 +154,7 @@ NSString* makeFullUrl(SYRequest *request) {
 
 NSDictionary* makeFullParameters(SYRequest *request) {
 
-    return [[[[SYServiceFactory sharedInstance] serviceWithIdentifier:request.serviceType] requestParametersBuilder] rebuildParameters:request];
+    return [[[SYServiceFactory sharedInstance] serviceWithIdentifier:request.serviceType] makeParams:request.requestParams];
 }
 
 #pragma mark - 监测网络状态

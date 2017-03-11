@@ -23,8 +23,6 @@
 
 #import "SYCache.h"
 #import "SYCacheObject.h"
-#import "SYRequestParametersBuilder.h"
-#import "SYNetwork.h"
 #import "SYRequestConfig.h"
 #import "SYServiceFactory.h"
 
@@ -107,11 +105,13 @@
 - (NSString *)keyWithServiceIdentifier:(NSString *)identifier
                                    URL:(NSString *)URL
                          requestParams:(NSDictionary *)requestParams {
-    
-    NSDictionary *serviceStorage = [SYRequestConfig sharedConfig].serviceStorage;
-    SYRequestParametersBuilder *builder = [[SYServiceFactory sharedInstance] serviceWithIdentifier:serviceStorage[identifier]].requestParametersBuilder;
-    
-    return [NSString stringWithFormat:@"%@%@",URL ,[builder cacheSaveKeyString:requestParams]];
+    // 使用 URL + identifier + 原始参数排序后生成的字符串 排序后 生成缓存的 key。  使用统一的规则生成, 并不需要由框架使用者自己决定这个规则
+    NSArray *sortedArray = [[requestParams allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    __block NSString *sortedString = @"";
+    [sortedArray enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL * stop) {
+        sortedString = [sortedString stringByAppendingString:[NSString stringWithFormat:@"%@=%@",[obj lowercaseString], requestParams[obj]]];
+    }];
+    return [NSString stringWithFormat:@"%@%@%@",URL, identifier, sortedString];
 }
 
 @end

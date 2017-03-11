@@ -17,7 +17,6 @@
 #import "SYNetwork.h"
 #import "SYRequest.h"
 #import "SYRequestConfig.h"
-#import "SYRequestParametersBuilder.h"
 #import "SYResponse.h"
 #import "SYService.h"
 #import "SYServiceFactory.h"

@@ -22,8 +22,6 @@
 //
 
 #import "SYRequestConfig.h"
-#import "SYRequestParametersBuilder.h"
-
 
 @implementation SYRequestConfig
 {
@@ -31,7 +29,6 @@
     NSTimeInterval _timeOutInterval;
     NSUInteger _cacheLimitCount;
     NSDictionary *_serviceStorage;
-    SYRequestParametersBuilder *_requestParametersBuilder;
 }
 
 + (SYRequestConfig *)sharedConfig {
@@ -45,12 +42,10 @@
 
 - (void)configBaseUrl:(NSString *)base
       timeOutInterval:(NSTimeInterval)timeout
-      cacheCountLimit:(NSUInteger)cacheCountLimit
-rebuildParametersManger:(nonnull SYRequestParametersBuilder *)rebuildParametersManager {
+      cacheCountLimit:(NSUInteger)cacheCountLimit {
     _baseUrl = base ? [base copy] : nil;
     _timeOutInterval = timeout ? timeout : 60;
     _cacheLimitCount = cacheCountLimit ? cacheCountLimit : 1000;
-    _requestParametersBuilder = rebuildParametersManager;
 }
 
 - (void)configTimeOutInterval:(NSTimeInterval)timeout

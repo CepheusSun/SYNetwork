@@ -23,20 +23,12 @@
 
 #import "SYAppDelegate.h"
 #import "SYNetwork.h"
-#import "TESTRequestParameterBuilder.h"
 #import "SYViewController.h"
 
 @implementation SYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-//    [[SYRequestConfig sharedConfig] configBaseUrl:@"http://api.endclient.test.dph168.com/v210/"
-//                                  timeOutInterval:20
-//                                  cacheCountLimit:1000
-//                          rebuildParametersManger:[TESTRequestParameterBuilder sharedInstance]];
-//    
-    
     [[SYRequestConfig sharedConfig] configTimeOutInterval:20
                                           cacheCountLimit:1000
                                            serviceStorage:@{@"TestTypeOne" : @"TestService"}];

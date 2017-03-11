@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		328E627E3097534096CCB9FB /* Pods_SYNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA60868A0371E13C8154C5D0 /* Pods_SYNetwork_Example.framework */; };
 		332EEA241E07786300009AAF /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 332EEA101E07786300009AAF /* .gitkeep */; };
 		332EEA251E07786300009AAF /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 332EEA121E07786300009AAF /* .gitkeep */; };
 		332EEA261E07786300009AAF /* SYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA141E07786300009AAF /* SYCache.m */; };
@@ -16,9 +15,7 @@
 		332EEA291E07786300009AAF /* SYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA1A1E07786300009AAF /* SYLogger.m */; };
 		332EEA2A1E07786300009AAF /* SYRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA1D1E07786300009AAF /* SYRequest.m */; };
 		332EEA2B1E07786300009AAF /* SYRequestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA1F1E07786300009AAF /* SYRequestConfig.m */; };
-		332EEA2C1E07786300009AAF /* SYRequestParametersBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA211E07786300009AAF /* SYRequestParametersBuilder.m */; };
 		332EEA2D1E07786300009AAF /* SYResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA231E07786300009AAF /* SYResponse.m */; };
-		332EEA311E0778D900009AAF /* TESTRequestParameterBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA301E0778D900009AAF /* TESTRequestParameterBuilder.m */; };
 		332EEA341E07799700009AAF /* TestBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA331E07799700009AAF /* TestBaseApi.m */; };
 		332EEA371E0779E900009AAF /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA361E0779E900009AAF /* TestApi.m */; };
 		332EEA3D1E07805300009AAF /* NSDictionary+SYNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA3A1E07805300009AAF /* NSDictionary+SYNetworking.m */; };
@@ -26,6 +23,7 @@
 		332EEA411E07B61A00009AAF /* SYService.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA401E07B61A00009AAF /* SYService.m */; };
 		332EEA441E07B72E00009AAF /* SYServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA431E07B72E00009AAF /* SYServiceFactory.m */; };
 		332EEA471E07BF1200009AAF /* TestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA461E07BF1200009AAF /* TestService.m */; };
+		33A185921E74306C00424384 /* SYNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A185911E74306C00424384 /* SYNetwork.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -34,13 +32,13 @@
 		6003F59E195388D20070C39A /* SYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* SYAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* SYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* SYViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
-		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		6D752EEE5F0833203D71E7EB /* Pods_SYNetwork_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8202CB42FEB23013D21052EB /* Pods_SYNetwork_Tests.framework */; };
+		78DFF8934DB146A68A8CED08 /* Pods_SYNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66999D371BDF726640EC32B5 /* Pods_SYNetwork_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		AA3E7D1702EAFED9A13F3E06 /* Pods_SYNetwork_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6AC223672CFDF6412E2549 /* Pods_SYNetwork_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,17 +63,12 @@
 		332EEA181E07786300009AAF /* SYHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHTTPManager.m; sourceTree = "<group>"; };
 		332EEA191E07786300009AAF /* SYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYLogger.h; sourceTree = "<group>"; };
 		332EEA1A1E07786300009AAF /* SYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYLogger.m; sourceTree = "<group>"; };
-		332EEA1B1E07786300009AAF /* SYNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNetwork.h; sourceTree = "<group>"; };
 		332EEA1C1E07786300009AAF /* SYRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYRequest.h; sourceTree = "<group>"; };
 		332EEA1D1E07786300009AAF /* SYRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYRequest.m; sourceTree = "<group>"; };
 		332EEA1E1E07786300009AAF /* SYRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYRequestConfig.h; sourceTree = "<group>"; };
 		332EEA1F1E07786300009AAF /* SYRequestConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYRequestConfig.m; sourceTree = "<group>"; };
-		332EEA201E07786300009AAF /* SYRequestParametersBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYRequestParametersBuilder.h; sourceTree = "<group>"; };
-		332EEA211E07786300009AAF /* SYRequestParametersBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYRequestParametersBuilder.m; sourceTree = "<group>"; };
 		332EEA221E07786300009AAF /* SYResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYResponse.h; sourceTree = "<group>"; };
 		332EEA231E07786300009AAF /* SYResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYResponse.m; sourceTree = "<group>"; };
-		332EEA2F1E0778D900009AAF /* TESTRequestParameterBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTRequestParameterBuilder.h; sourceTree = "<group>"; };
-		332EEA301E0778D900009AAF /* TESTRequestParameterBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTRequestParameterBuilder.m; sourceTree = "<group>"; };
 		332EEA321E07799700009AAF /* TestBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBaseApi.h; sourceTree = "<group>"; };
 		332EEA331E07799700009AAF /* TestBaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBaseApi.m; sourceTree = "<group>"; };
 		332EEA351E0779E900009AAF /* TestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
@@ -90,6 +83,8 @@
 		332EEA431E07B72E00009AAF /* SYServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYServiceFactory.m; sourceTree = "<group>"; };
 		332EEA451E07BF1200009AAF /* TestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestService.h; sourceTree = "<group>"; };
 		332EEA461E07BF1200009AAF /* TestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestService.m; sourceTree = "<group>"; };
+		33A185901E742F7E00424384 /* SYNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNetwork.h; sourceTree = "<group>"; };
+		33A185911E74306C00424384 /* SYNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SYNetwork.framework; path = "../../../Library/Developer/Xcode/DerivedData/SYNetwork-ghzjjskonatttzexmtncpwkfivjz/Build/Products/Debug-iphonesimulator/SYNetwork/SYNetwork.framework"; sourceTree = "<group>"; };
 		4B87CDF6AB0E9D9454E39999 /* Pods-SYNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYNetwork_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYNetwork_Example/Pods-SYNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 		582BF86CCB69C897A760018B /* Pods-SYNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYNetwork_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYNetwork_Tests/Pods-SYNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SYNetwork_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYNetwork_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,18 +101,17 @@
 		6003F5A6195388D20070C39A /* SYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* SYNetwork_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SYNetwork_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		8202CB42FEB23013D21052EB /* Pods_SYNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66999D371BDF726640EC32B5 /* Pods_SYNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F6AC223672CFDF6412E2549 /* Pods_SYNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AD5F6F38F0DED303ADB6A554 /* SYNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SYNetwork.podspec; path = ../SYNetwork.podspec; sourceTree = "<group>"; };
 		CF1774CC8906C3B9FD027C6E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CF22042ACEE57E0B738F89E5 /* Pods-SYNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYNetwork_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYNetwork_Tests/Pods-SYNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CFABC2E28347803B36617095 /* Pods-SYNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYNetwork_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYNetwork_Example/Pods-SYNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DA60868A0371E13C8154C5D0 /* Pods_SYNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +122,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				328E627E3097534096CCB9FB /* Pods_SYNetwork_Example.framework in Frameworks */,
+				78DFF8934DB146A68A8CED08 /* Pods_SYNetwork_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,10 +130,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
+				33A185921E74306C00424384 /* SYNetwork.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				6D752EEE5F0833203D71E7EB /* Pods_SYNetwork_Tests.framework in Frameworks */,
+				AA3E7D1702EAFED9A13F3E06 /* Pods_SYNetwork_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				332EEA121E07786300009AAF /* .gitkeep */,
+				33A185901E742F7E00424384 /* SYNetwork.h */,
 				332EEA131E07786300009AAF /* SYCache.h */,
 				332EEA141E07786300009AAF /* SYCache.m */,
 				332EEA151E07786300009AAF /* SYCacheObject.h */,
@@ -176,13 +171,10 @@
 				332EEA181E07786300009AAF /* SYHTTPManager.m */,
 				332EEA191E07786300009AAF /* SYLogger.h */,
 				332EEA1A1E07786300009AAF /* SYLogger.m */,
-				332EEA1B1E07786300009AAF /* SYNetwork.h */,
 				332EEA1C1E07786300009AAF /* SYRequest.h */,
 				332EEA1D1E07786300009AAF /* SYRequest.m */,
 				332EEA1E1E07786300009AAF /* SYRequestConfig.h */,
 				332EEA1F1E07786300009AAF /* SYRequestConfig.m */,
-				332EEA201E07786300009AAF /* SYRequestParametersBuilder.h */,
-				332EEA211E07786300009AAF /* SYRequestParametersBuilder.m */,
 				332EEA221E07786300009AAF /* SYResponse.h */,
 				332EEA231E07786300009AAF /* SYResponse.m */,
 				332EEA3F1E07B61A00009AAF /* SYService.h */,
@@ -197,8 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				332EEA381E07805300009AAF /* Categorise */,
-				332EEA2F1E0778D900009AAF /* TESTRequestParameterBuilder.h */,
-				332EEA301E0778D900009AAF /* TESTRequestParameterBuilder.m */,
 				332EEA321E07799700009AAF /* TestBaseApi.h */,
 				332EEA331E07799700009AAF /* TestBaseApi.m */,
 				332EEA351E0779E900009AAF /* TestApi.h */,
@@ -256,12 +246,12 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33A185911E74306C00424384 /* SYNetwork.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
-				6003F5AF195388D20070C39A /* XCTest.framework */,
-				DA60868A0371E13C8154C5D0 /* Pods_SYNetwork_Example.framework */,
-				8202CB42FEB23013D21052EB /* Pods_SYNetwork_Tests.framework */,
+				66999D371BDF726640EC32B5 /* Pods_SYNetwork_Example.framework */,
+				6F6AC223672CFDF6412E2549 /* Pods_SYNetwork_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -522,13 +512,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				332EEA261E07786300009AAF /* SYCache.m in Sources */,
-				332EEA311E0778D900009AAF /* TESTRequestParameterBuilder.m in Sources */,
 				332EEA441E07B72E00009AAF /* SYServiceFactory.m in Sources */,
 				6003F59E195388D20070C39A /* SYAppDelegate.m in Sources */,
 				332EEA2D1E07786300009AAF /* SYResponse.m in Sources */,
 				332EEA3D1E07805300009AAF /* NSDictionary+SYNetworking.m in Sources */,
 				332EEA2B1E07786300009AAF /* SYRequestConfig.m in Sources */,
-				332EEA2C1E07786300009AAF /* SYRequestParametersBuilder.m in Sources */,
 				332EEA471E07BF1200009AAF /* TestService.m in Sources */,
 				6003F5A7195388D20070C39A /* SYViewController.m in Sources */,
 				332EEA341E07799700009AAF /* TestBaseApi.m in Sources */,

@@ -29,13 +29,12 @@
  SYRequestConfig:
  - (void)configBaseUrl:(NSString *)base
  timeOutInterval:(NSTimeInterval)timeout
- cacheCountLimit:(NSUInteger)cacheCountLimit
- rebuildParametersManger:(SYRequestParametersBuilder*)rebuildParametersManager;
+ cacheCountLimit:(NSUInteger)cacheCountLimit;
+ 
  在 Appdelegate 中通过这个方法 配置 SYNetwork 全局配置, 如:
  
- [[SYRequestConfig sharedConfig] configBaseUrl:BASE_URL timeOutInterval:20 cacheCountLimit:1000 rebuildParametersManger:[DPHRequestParametersBuilder sharedInstance]];
+ [[SYRequestConfig sharedConfig] configBaseUrl:BASE_URL timeOutInterval:20 cacheCountLimit:1000];
  
- 创建一个 SYRequestParametersBuilder 的子类，这是用来做签名的。
  */
 
 
@@ -48,7 +47,6 @@
 #import "SYResponse.h"
 #import "SYRequestConfig.h"
 #import "SYServiceFactory.h"
-#import "SYRequestParametersBuilder.h"
 #import "SYRequest.h"
 
 #endif /* SYNetwork_h */

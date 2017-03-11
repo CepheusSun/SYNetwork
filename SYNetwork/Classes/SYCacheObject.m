@@ -22,8 +22,8 @@
 //
 
 #import "SYCacheObject.h"
-#import "SYNetwork.h"
 #import "SYRequestConfig.h"
+
 @interface SYCacheObject ()
 
 @property (nonatomic, copy, readwrite) NSData *content;

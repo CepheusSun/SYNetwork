@@ -23,7 +23,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class SYRequestParametersBuilder;
 NS_ASSUME_NONNULL_BEGIN
 // 配置基本环境变量 如BaseUrl等
 @interface SYRequestConfig : NSObject
