@@ -25,6 +25,9 @@
 
 @implementation TestService
 
+- (NSDictionary *)makeParams:(NSDictionary *)originParams {
+    return originParams;
+}
 
 - (NSString *)appkey {
     return @"thisaiaappkey";
