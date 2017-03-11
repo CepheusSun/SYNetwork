@@ -31,7 +31,7 @@
 {
     [[SYRequestConfig sharedConfig] configTimeOutInterval:20
                                           cacheCountLimit:1000
-                                           serviceStorage:@{@"TestTypeOne" : @"TestService"}];
+                                           serviceStorage:@[ @"TestService" ]];
     
     self.window.bounds = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = [UIColor whiteColor];

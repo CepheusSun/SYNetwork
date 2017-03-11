@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// if you hava more sevices with different base URL use the method to config.
 - (void)configTimeOutInterval:(NSTimeInterval)timeout
               cacheCountLimit:(NSUInteger)cacheCountLimit
-               serviceStorage:(NSDictionary *)dictionary;
+               serviceStorage:(NSArray *)stroageArray;
 
 /**
  service storage use key-value to save service class name and identifier

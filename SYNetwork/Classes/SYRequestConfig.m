@@ -50,9 +50,13 @@
 
 - (void)configTimeOutInterval:(NSTimeInterval)timeout
               cacheCountLimit:(NSUInteger)cacheCountLimit
-               serviceStorage:(NSDictionary *)dictionary {
+               serviceStorage:(NSArray *)serviceArray {
     _timeOutInterval = timeout ? timeout : 60;
     _cacheLimitCount = cacheCountLimit ? cacheCountLimit : 1000;
+    NSDictionary *dictionary = [NSDictionary dictionary];
+    [serviceArray enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * stop) {
+        [dictionary setValue:obj forKey:obj];
+    }];
     _serviceStorage = dictionary;
 }
 
