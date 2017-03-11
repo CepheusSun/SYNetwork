@@ -7,21 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		332EEA241E07786300009AAF /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 332EEA101E07786300009AAF /* .gitkeep */; };
-		332EEA251E07786300009AAF /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 332EEA121E07786300009AAF /* .gitkeep */; };
-		332EEA261E07786300009AAF /* SYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA141E07786300009AAF /* SYCache.m */; };
-		332EEA271E07786300009AAF /* SYCacheObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA161E07786300009AAF /* SYCacheObject.m */; };
-		332EEA281E07786300009AAF /* SYHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA181E07786300009AAF /* SYHTTPManager.m */; };
-		332EEA291E07786300009AAF /* SYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA1A1E07786300009AAF /* SYLogger.m */; };
-		332EEA2A1E07786300009AAF /* SYRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA1D1E07786300009AAF /* SYRequest.m */; };
-		332EEA2B1E07786300009AAF /* SYRequestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA1F1E07786300009AAF /* SYRequestConfig.m */; };
-		332EEA2D1E07786300009AAF /* SYResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA231E07786300009AAF /* SYResponse.m */; };
 		332EEA341E07799700009AAF /* TestBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA331E07799700009AAF /* TestBaseApi.m */; };
 		332EEA371E0779E900009AAF /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA361E0779E900009AAF /* TestApi.m */; };
 		332EEA3D1E07805300009AAF /* NSDictionary+SYNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA3A1E07805300009AAF /* NSDictionary+SYNetworking.m */; };
 		332EEA3E1E07805300009AAF /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA3C1E07805300009AAF /* NSString+Encryption.m */; };
-		332EEA411E07B61A00009AAF /* SYService.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA401E07B61A00009AAF /* SYService.m */; };
-		332EEA441E07B72E00009AAF /* SYServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA431E07B72E00009AAF /* SYServiceFactory.m */; };
 		332EEA471E07BF1200009AAF /* TestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 332EEA461E07BF1200009AAF /* TestService.m */; };
 		33A185921E74306C00424384 /* SYNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A185911E74306C00424384 /* SYNetwork.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -53,22 +42,6 @@
 
 /* Begin PBXFileReference section */
 		12300D084F9083EC7D61696B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		332EEA101E07786300009AAF /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		332EEA121E07786300009AAF /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		332EEA131E07786300009AAF /* SYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCache.h; sourceTree = "<group>"; };
-		332EEA141E07786300009AAF /* SYCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCache.m; sourceTree = "<group>"; };
-		332EEA151E07786300009AAF /* SYCacheObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCacheObject.h; sourceTree = "<group>"; };
-		332EEA161E07786300009AAF /* SYCacheObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCacheObject.m; sourceTree = "<group>"; };
-		332EEA171E07786300009AAF /* SYHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHTTPManager.h; sourceTree = "<group>"; };
-		332EEA181E07786300009AAF /* SYHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHTTPManager.m; sourceTree = "<group>"; };
-		332EEA191E07786300009AAF /* SYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYLogger.h; sourceTree = "<group>"; };
-		332EEA1A1E07786300009AAF /* SYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYLogger.m; sourceTree = "<group>"; };
-		332EEA1C1E07786300009AAF /* SYRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYRequest.h; sourceTree = "<group>"; };
-		332EEA1D1E07786300009AAF /* SYRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYRequest.m; sourceTree = "<group>"; };
-		332EEA1E1E07786300009AAF /* SYRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYRequestConfig.h; sourceTree = "<group>"; };
-		332EEA1F1E07786300009AAF /* SYRequestConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYRequestConfig.m; sourceTree = "<group>"; };
-		332EEA221E07786300009AAF /* SYResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYResponse.h; sourceTree = "<group>"; };
-		332EEA231E07786300009AAF /* SYResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYResponse.m; sourceTree = "<group>"; };
 		332EEA321E07799700009AAF /* TestBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBaseApi.h; sourceTree = "<group>"; };
 		332EEA331E07799700009AAF /* TestBaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBaseApi.m; sourceTree = "<group>"; };
 		332EEA351E0779E900009AAF /* TestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
@@ -77,13 +50,8 @@
 		332EEA3A1E07805300009AAF /* NSDictionary+SYNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SYNetworking.m"; sourceTree = "<group>"; };
 		332EEA3B1E07805300009AAF /* NSString+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encryption.h"; sourceTree = "<group>"; };
 		332EEA3C1E07805300009AAF /* NSString+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encryption.m"; sourceTree = "<group>"; };
-		332EEA3F1E07B61A00009AAF /* SYService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYService.h; sourceTree = "<group>"; };
-		332EEA401E07B61A00009AAF /* SYService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYService.m; sourceTree = "<group>"; };
-		332EEA421E07B72E00009AAF /* SYServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYServiceFactory.h; sourceTree = "<group>"; };
-		332EEA431E07B72E00009AAF /* SYServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYServiceFactory.m; sourceTree = "<group>"; };
 		332EEA451E07BF1200009AAF /* TestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestService.h; sourceTree = "<group>"; };
 		332EEA461E07BF1200009AAF /* TestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestService.m; sourceTree = "<group>"; };
-		33A185901E742F7E00424384 /* SYNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNetwork.h; sourceTree = "<group>"; };
 		33A185911E74306C00424384 /* SYNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SYNetwork.framework; path = "../../../Library/Developer/Xcode/DerivedData/SYNetwork-ghzjjskonatttzexmtncpwkfivjz/Build/Products/Debug-iphonesimulator/SYNetwork/SYNetwork.framework"; sourceTree = "<group>"; };
 		4B87CDF6AB0E9D9454E39999 /* Pods-SYNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYNetwork_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SYNetwork_Example/Pods-SYNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 		582BF86CCB69C897A760018B /* Pods-SYNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYNetwork_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SYNetwork_Tests/Pods-SYNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,51 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		332EEA0E1E07786300009AAF /* SYNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				332EEA0F1E07786300009AAF /* Assets */,
-				332EEA111E07786300009AAF /* Classes */,
-			);
-			name = SYNetwork;
-			path = ../SYNetwork;
-			sourceTree = "<group>";
-		};
-		332EEA0F1E07786300009AAF /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				332EEA101E07786300009AAF /* .gitkeep */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		332EEA111E07786300009AAF /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				332EEA121E07786300009AAF /* .gitkeep */,
-				33A185901E742F7E00424384 /* SYNetwork.h */,
-				332EEA131E07786300009AAF /* SYCache.h */,
-				332EEA141E07786300009AAF /* SYCache.m */,
-				332EEA151E07786300009AAF /* SYCacheObject.h */,
-				332EEA161E07786300009AAF /* SYCacheObject.m */,
-				332EEA171E07786300009AAF /* SYHTTPManager.h */,
-				332EEA181E07786300009AAF /* SYHTTPManager.m */,
-				332EEA191E07786300009AAF /* SYLogger.h */,
-				332EEA1A1E07786300009AAF /* SYLogger.m */,
-				332EEA1C1E07786300009AAF /* SYRequest.h */,
-				332EEA1D1E07786300009AAF /* SYRequest.m */,
-				332EEA1E1E07786300009AAF /* SYRequestConfig.h */,
-				332EEA1F1E07786300009AAF /* SYRequestConfig.m */,
-				332EEA221E07786300009AAF /* SYResponse.h */,
-				332EEA231E07786300009AAF /* SYResponse.m */,
-				332EEA3F1E07B61A00009AAF /* SYService.h */,
-				332EEA401E07B61A00009AAF /* SYService.m */,
-				332EEA421E07B72E00009AAF /* SYServiceFactory.h */,
-				332EEA431E07B72E00009AAF /* SYServiceFactory.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		332EEA2E1E0778B400009AAF /* TestFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +147,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				332EEA0E1E07786300009AAF /* SYNetwork */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for SYNetwork */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -344,7 +266,6 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				603A00A36FAD32D3D1085D95 /* [CP] Embed Pods Frameworks */,
-				BE955FB6CF63C13512C935CC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -397,9 +318,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				332EEA251E07786300009AAF /* .gitkeep in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
-				332EEA241E07786300009AAF /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,21 +408,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYNetwork_Example/Pods-SYNetwork_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE955FB6CF63C13512C935CC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SYNetwork_Tests/Pods-SYNetwork_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -511,20 +415,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				332EEA261E07786300009AAF /* SYCache.m in Sources */,
-				332EEA441E07B72E00009AAF /* SYServiceFactory.m in Sources */,
 				6003F59E195388D20070C39A /* SYAppDelegate.m in Sources */,
-				332EEA2D1E07786300009AAF /* SYResponse.m in Sources */,
 				332EEA3D1E07805300009AAF /* NSDictionary+SYNetworking.m in Sources */,
-				332EEA2B1E07786300009AAF /* SYRequestConfig.m in Sources */,
 				332EEA471E07BF1200009AAF /* TestService.m in Sources */,
 				6003F5A7195388D20070C39A /* SYViewController.m in Sources */,
 				332EEA341E07799700009AAF /* TestBaseApi.m in Sources */,
-				332EEA2A1E07786300009AAF /* SYRequest.m in Sources */,
-				332EEA411E07B61A00009AAF /* SYService.m in Sources */,
-				332EEA281E07786300009AAF /* SYHTTPManager.m in Sources */,
-				332EEA271E07786300009AAF /* SYCacheObject.m in Sources */,
-				332EEA291E07786300009AAF /* SYLogger.m in Sources */,
 				332EEA371E0779E900009AAF /* TestApi.m in Sources */,
 				332EEA3E1E07805300009AAF /* NSString+Encryption.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
