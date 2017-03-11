@@ -23,15 +23,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SYServiceProtocol <NSObject>
-
-@property (nonatomic ,copy) NSString *appkey;
-@property (nonatomic ,copy) NSString *apiVersion;
-@property (nonatomic ,copy) NSString *baseUrl;
-
-- (NSDictionary *)makeParams:(NSDictionary *)originParams;
-
-@end
 @interface SYService : NSObject
 
 @property (nonatomic ,copy) NSString *appkey;

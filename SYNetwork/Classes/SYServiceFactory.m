@@ -50,7 +50,7 @@
     return sharedInstance;
 }
 
-- (SYService<SYServiceProtocol> *)serviceWithIdentifier:(NSString *)identifier {
+- (__kindof SYService *)serviceWithIdentifier:(NSString *)identifier {
 
     if (self.serviceStorage[identifier] == nil) {
         self.serviceStorage[identifier] = [self newServiceWithIdentifier:identifier];
@@ -58,7 +58,7 @@
     return self.serviceStorage[identifier];
 }
 
-- (SYService<SYServiceProtocol> *)newServiceWithIdentifier:(NSString *)identifier {
+- (__kindof SYService *)newServiceWithIdentifier:(NSString *)identifier {
     NSDictionary *serviceStorage = [[SYRequestConfig sharedConfig] serviceStorage];
     if (serviceStorage) {
         NSString *classString = serviceStorage[identifier];
@@ -66,7 +66,5 @@
     }
     return nil;
 }
-
-
 
 @end

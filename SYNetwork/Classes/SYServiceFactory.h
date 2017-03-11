@@ -31,5 +31,5 @@
 
 + (instancetype)sharedInstance;
 
-- (SYService<SYServiceProtocol> *)serviceWithIdentifier:(NSString *)identifier;
+- (__kindof SYService *)serviceWithIdentifier:(NSString *)identifier;
 @end

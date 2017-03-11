@@ -47,6 +47,7 @@
 - (NSUInteger)cacheTimeInterval {
     return 100;
 }
+
 - (NSMutableDictionary *)requestParams {
     return @{
              @"phone": _username,
