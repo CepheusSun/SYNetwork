@@ -24,7 +24,6 @@
 #import <Foundation/Foundation.h>
 #import "SYService.h"
 
-
 /**
  a factory class to create the services
  */

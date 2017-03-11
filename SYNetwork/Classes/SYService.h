@@ -29,14 +29,14 @@
 @property (nonatomic ,copy) NSString *apiVersion;
 @property (nonatomic ,copy) NSString *baseUrl;
 
+- (NSDictionary *)makeParams:(NSDictionary *)originParams;
+
 @end
 @interface SYService : NSObject
 
 @property (nonatomic ,copy) NSString *appkey;
 @property (nonatomic ,copy) NSString *apiVersion;
 @property (nonatomic ,copy) NSString *baseUrl;
-
-@property (nonatomic, weak) id<SYServiceProtocol> child;
 
 - (NSDictionary *)makeParams:(NSDictionary *)originParams;
 @end

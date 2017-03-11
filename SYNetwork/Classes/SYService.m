@@ -26,18 +26,6 @@
 
 @implementation SYService
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        if ([self conformsToProtocol:@protocol(SYServiceProtocol)]) {
-            self.child = (id<SYServiceProtocol>)self;
-        }
-    }
-    return self;
-}
-
-
 - (NSDictionary *)makeParams:(NSDictionary *)originParams {
     return originParams;
 }

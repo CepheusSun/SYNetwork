@@ -6,14 +6,15 @@
 [![Platform](https://img.shields.io/cocoapods/p/SYNetwork.svg?style=flat)](http://cocoapods.org/pods/SYNetwork)
 
 
-
 Easy and light Network framework based on AFNetwork for iOS.
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## 2.1 新特性
 
+版本移除了在2.0中新增的 SYRequestParametersBuilder 类,将参数加工的相关方法移动到 SYService 及其子类中进行。 将产生 缓存 key 的方法移动的缓存类中,不开放给业务层。
 
 ## 2.0 新特性
 
@@ -22,19 +23,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 对应 `AppDelegate `中的方法对应修改
 
 ```objective-c
-//    [[SYRequestConfig sharedConfig] configBaseUrl:@"http://api.endclient.test.dph168.com/v210/"
-//                                  timeOutInterval:20
-//                                  cacheCountLimit:1000
-//                          rebuildParametersManger:[TESTRequestParameterBuilder sharedInstance]];
-//    
-    
-    [[SYRequestConfig sharedConfig] configTimeOutInterval:20
-                                          cacheCountLimit:1000
-                                           serviceStorage:@{@"TestTypeOne" : @"TestService"}];
+[[SYRequestConfig sharedConfig] configTimeOutInterval:20
+                                      cacheCountLimit:1000
+                            serviceStorage:@{@"TestTypeOne" : @"TestService"}];
 ```
 
 对应的在继承于 `SYService`的 `service`字类中添加相应的属性。可以参考 demo 
-
 
 
 并且为了做出对应修改，**在`SYRequest`基类中添加对应方法设置 这个api 所属的 service** 。对应在之类中只需要添加对应方法。
@@ -46,8 +40,6 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ```
 
-
-
 **SYService** 中添加
 
 ```objective-c
@@ -58,8 +50,6 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 相关方法，将签名相关的类，移动到这个地方，实现不同的service可以有不同的签名规则。
 
-
-
 ## 原理
 
 ### 组成
@@ -68,9 +58,9 @@ SYNetwork 由下面两个部分组成
 
 * SYNetwork
 
-  * SYRequestParametersBuilder
+ ~~SYRequestParametersBuilder~~
 
-    > 这个类可以添加一些公共的参数
+    > ~~这个类可以添加一些公共的参数~~  已经废弃,相关功能已到 SYService 类中
 
   * SYRequest
 
@@ -132,13 +122,13 @@ pod install
 在`appdelegate`中加入如下代码
 
 ```objective-c
-[[SYRequestConfig sharedConfig] configBaseUrl:YOUR_BASE_URL                                            								 timeOutInterval:20
-                              cacheCountLimit:1000
-                      rebuildParametersManger:[XXRequestParametersBuilder sharedInstance]];
+    [[SYRequestConfig sharedConfig] configTimeOutInterval:20
+                                          cacheCountLimit:1000
+                                           serviceStorage:@{@"TestTypeOne" : @"TestService"}];
 
 ```
 
-以上代码中的`XXRequestParametersBuilder` 是`SYRequestParametersBuilder`的子类,主要有以下方法
+~~以上代码中的`XXRequestParametersBuilder` 是`SYRequestParametersBuilder`的子类,主要有以下方法~~
 
 ```objective-c
 + (SYRequestParametersBuilder *)sharedInstance;
@@ -146,7 +136,7 @@ pod install
 - (NSDictionary *)rebuildParameters:(NSDictionary *)parameters;
 
 /**
- 生成缓存的key  这个方法必须由字类实现
+ 生成缓存的key  这个方法必须由字类实现  移除后这个key直接由框架内部产生, 不需要再由业务层规定
  
  @param parcmeters 参数
  @return key
@@ -211,8 +201,6 @@ pod install
     }];
 ```
 
-
-
 也可以通过`delegate`收到回调
 
 ```objective-c
@@ -233,3 +221,5 @@ pod install
 ## License
 
 SYNetwork is available under the MIT license. See the LICENSE file for more info.
+
+
