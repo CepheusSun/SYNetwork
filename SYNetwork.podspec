@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   # pod 库名
   s.name             = 'SYNetwork'
   # pod 版本
-  s.version          = '2.5.0'
+  s.version          = '2.6.0'
   # pod 概述 
   s.summary          = 'A grest network frameworks.'
   # pod的详细描述

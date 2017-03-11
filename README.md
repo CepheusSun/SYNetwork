@@ -12,7 +12,7 @@ Easy and light Network framework based on AFNetwork for iOS.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## 2.5.0 新特性
+## 2.6.0 新特性
 
 版本移除了在2.0中新增的 SYRequestParametersBuilder 类,将参数加工的相关方法移动到 SYService 及其子类中进行。 将产生 缓存 key 的方法移动的缓存类中,不开放给业务层。
 
