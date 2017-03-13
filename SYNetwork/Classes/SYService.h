@@ -29,5 +29,14 @@
 @property (nonatomic ,copy) NSString *apiVersion;
 @property (nonatomic ,copy) NSString *baseUrl;
 
+// 拼接 参数 加密等动作
 - (NSDictionary *)makeParams:(NSDictionary *)originParams;
+
+// 业务层需要自定义 Body 的时候使用
+- (NSMutableURLRequest *)makeUrlRequest:(NSString *)url originParams:(NSDictionary *)originParams;
+
+
+// 对服务器返回的数据进行解密
+- (NSData *)decodeResponseObject:(id)responseObject;
+
 @end

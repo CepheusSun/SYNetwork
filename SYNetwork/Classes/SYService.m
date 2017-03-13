@@ -30,6 +30,14 @@
     return originParams;
 }
 
+- (NSMutableURLRequest *)makeUrlRequest:(NSString *)url originParams:(NSDictionary *)originParams {
+    return nil;
+}
+
+- (NSData * )decodeResponseObject:(id)responseObject {
+    return responseObject;
+}
+
 - (NSString *)appkey {
     return @"";
 }
