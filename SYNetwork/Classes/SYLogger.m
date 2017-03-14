@@ -75,7 +75,7 @@
     [logString appendFormat:@"Params:\n%@", request.requestParams];
     
     [logString appendString:@"\n---------------  Related Request Content  --------------\n"];
-    
+
     [logString appendFormat:@"\n\nHTTP Header:\n%@", dataTask.currentRequest.allHTTPHeaderFields ? dataTask.currentRequest.allHTTPHeaderFields : @"\t\t\t\t\tN/A"];
     [logString appendFormat:@"\n\nHTTP Body:\n\n%@", [[NSString alloc] initWithData:dataTask.currentRequest.HTTPBody encoding:NSUTF8StringEncoding]];
     

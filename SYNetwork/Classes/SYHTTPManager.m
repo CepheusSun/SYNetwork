@@ -78,7 +78,6 @@
     if (urlRequest) {
         __weak typeof(self) weakSelf = self;
         dataTask = [self.sessionManager dataTaskWithRequest:urlRequest completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-            NSLog(@"%@",error.localizedDescription);
             if (error) {
                 weakSelf.currentRequestCount --;
                 [SYLogger logDebugInfomationDataTask:dataTask request:request error:error];
@@ -86,12 +85,12 @@
             } else {
                 //  对服务器返回的数据进行解密
                 id decodeResobj = [service decodeResponseObject:responseObject];
-                NSLog(@"------%@",decodeResobj);
                 SYResponse *resp = [[SYResponse alloc] initWithRequestId:@([dataTask taskIdentifier])
                                                             responseData:decodeResobj
                                                                    error:nil];
                 weakSelf.currentRequestCount --;
                 [SYLogger logDebugInfomationDataTask:dataTask request:request response:resp];
+                success(resp ,nil);
             }
         }];
         
