@@ -34,7 +34,8 @@
     NSMutableString *logString = [NSMutableString stringWithString:
                                   @"\n\n**************************************************************\n*                       Request Start                        *\n**************************************************************\n\n"];
     
-    [logString appendFormat:@"API Name:\t%@\n", dataTask.currentRequest.URL];
+    [logString appendFormat:@"API URL:\t%@\n", dataTask.currentRequest.URL];
+    [logString appendFormat:@"API NAME:%@\n", request.requestUrl];
     switch (request.requestType) {
         case SYRequestPost:
             [logString appendFormat:@"Method:\t%@\n", @"RESTful POST"];
@@ -59,9 +60,10 @@
 + (void)logDebugInfomationDataTask:(NSURLSessionDataTask *)dataTask
                            request:(SYRequest *)request
                              error:(NSError *)error {
-    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                        Request Start                        =\n==============================================================\n\n"];
+    NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                       Request Start                        =\n==============================================================\n\n"];
     
-    [logString appendFormat:@"API Name:\t\t%@\n", dataTask.currentRequest.URL];
+    [logString appendFormat:@"API  URL:\t\t %@\n", dataTask.currentRequest.URL];
+    [logString appendFormat:@"API NAME:%@\n", request.requestUrl];
     switch (request.requestType) {
         case SYRequestPost:
             [logString appendFormat:@"Method:\t\t\t%@\n", @"RESTful POST"];
@@ -83,7 +85,7 @@
     [logString appendFormat:@"Error Localized Failure Reason:\t\t%@\n", error.localizedFailureReason];
     [logString appendFormat:@"Error Localized Recovery Suggestion:\t%@\n\n", error.localizedRecoverySuggestion];
     
-    [logString appendFormat:@"\n\n==============================================================\n=                        Request End                        =\n==============================================================\n\n\n\n"];
+    [logString appendFormat:@"\n\n==============================================================\n=                       Request End                        =\n==============================================================\n\n\n\n"];
     printf("%s", [logString UTF8String]);
 }
 
