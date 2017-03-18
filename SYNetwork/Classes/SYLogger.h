@@ -31,7 +31,7 @@
                            request:(SYRequest *)request
                           response:(SYResponse *)response;
 
-/// a beautiful logger when the request fail
+/// a beautiful logger when the request FAIL
 + (void)logDebugInfomationDataTask:(NSURLSessionDataTask *)dataTask
                            request:(SYRequest *)request
                              error:(NSError *)error;
