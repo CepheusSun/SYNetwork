@@ -1,4 +1,5 @@
-<center><img src="http://ocg4av0wv.bkt.clouddn.com/SYNETWORKICON.png">
+<center>
+<img src="http://ocg4av0wv.bkt.clouddn.com/SYNETWORKICON.png">
 
 [![CI Status](http://img.shields.io/travis/孙扬/SYNetwork.svg?style=flat)](https://travis-ci.org/孙扬/SYNetwork)
 [![Version](https://img.shields.io/cocoapods/v/SYNetwork.svg?style=flat)](http://cocoapods.org/pods/SYNetwork)
@@ -146,7 +147,7 @@ pod install
 
 
 
-#### step 2
+### step 2
 
 每个接口都是一个继承与`SYRequest`的子类,接下来以登录为例子
 

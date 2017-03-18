@@ -38,10 +38,6 @@
     return responseObject;
 }
 
-- (NSString *)appkey {
-    return @"";
-}
-
 - (NSString *)apiVersion {
     return @"";
 }
