@@ -1,4 +1,4 @@
-<center>![](http://ocg4av0wv.bkt.clouddn.com/SYNETWORKICON.png)</center>
+<center><img src="http://ocg4av0wv.bkt.clouddn.com/SYNETWORKICON.png"></center>
 
 [![CI Status](http://img.shields.io/travis/孙扬/SYNetwork.svg?style=flat)](https://travis-ci.org/孙扬/SYNetwork)
 [![Version](https://img.shields.io/cocoapods/v/SYNetwork.svg?style=flat)](http://cocoapods.org/pods/SYNetwork)
